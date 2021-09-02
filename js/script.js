@@ -15,6 +15,8 @@ const loadBook = () => {
     // clearing fields 
     document.getElementById("book-found").innerHTML = ''
     document.getElementById("book-container").innerHTML = ''
+
+    // show loading spinner
     spinner("block")
 }
 // search button click handler 
@@ -70,5 +72,7 @@ const showResult = books => {
     `
         bookContainer.appendChild(div)
     });
+
+    // hide loading spinner
     spinner("none")
 }
