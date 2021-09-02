@@ -14,6 +14,7 @@ const loadBook = () => {
     }
     // clearing fields 
     document.getElementById("book-found").innerHTML = ''
+    document.getElementById("book-not-found").innerHTML = ''
     document.getElementById("book-container").innerHTML = ''
 
     // show loading spinner
@@ -35,7 +36,7 @@ const showResult = books => {
     // if search result not found then return message 
     const bookFound = books.numFound
     if (books.numFound <= 0) {
-        document.getElementById("book-found").innerHTML = '<h1 class="text-center text-danger">SORRY, NO RESULTS FOUND !!</h1>'
+        document.getElementById("book-not-found").innerHTML = '<h1 class="text-center text-danger">SORRY, NO RESULTS FOUND !!</h1>'
     }
 
     // attatching searched result here 
@@ -52,21 +53,20 @@ const showResult = books => {
         div.innerHTML = `
             <div class="border h-100 d-md-flex align-items-center p-2">
                 <div class="text-center me-md-3 mb-md-0 mb-3 ">
-
                     <img src="${book.cover_i ? cover : coverNotFound}" alt="Cover Image" class="rounded" width=130px>
                 </div>
                 <div>
                     <h4>${book.title}</h4>
                     <h5 class="fw-light"><small class="fw-normal">by </small>${book.author_name ? book.author_name :
                 'Author Name Not Found'}</h5>
-            <p class="text-secondary mt- mb-0" > <span class="text-dark">Publisher </span>${book.publisher ?
+            <p class="text-secondary mt- mb-0" > <span class="text-dark">Publisher: </span>${book.publisher ?
                 book.publisher :
                 'Publisher Not Found'
             }</p >
                     <p class="text-secondary mt- mb-0"><span class="text-dark">First published in
                         </span>${book.first_publish_year ?
                 book.first_publish_year : ''}${book.publish_place ? `, ${book.publish_place}` : ''}</p>
-                    <p class="text-secondary"><span class="text-primary">${book.edition_count} ${book.edition_count
+                    <p class="text-secondary mt-2"><span class="text-primary">${book.edition_count} ${book.edition_count
                 > 1
                 ? "editions" :
                 "edition"}</span></p>
