@@ -41,7 +41,8 @@ const showResult = books => {
     // attatching searched result here 
     const bookContainer = document.getElementById("book-container")
     books.docs.forEach(book => {
-        document.getElementById("book-found").innerHTML = `<h3 class="py-2">Total Books Found: <span class="text-success fw-bold">${bookFound}</span></h3>`
+        document.getElementById("book-found").innerHTML = `<h3 class="py-2">Total Books Found: <span class="text-success fw-bold">${bookFound}</span></h3>
+        <h3>Result Showing: <span class="text-success fw-bold">${books.docs.length}</span></h3>`
         const div = document.createElement("div")
         const cover = `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`
         const coverNotFound = `../images/no-image.png`
