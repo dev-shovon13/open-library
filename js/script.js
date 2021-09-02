@@ -17,7 +17,9 @@ const loadBook = () => {
     document.getElementById("book-container").innerHTML = ''
 
     // show loading spinner
-    spinner("block")
+    if (searchText.length > 0) {
+        spinner("block")
+    }
 }
 // search button click handler 
 document.getElementById("book-search").addEventListener("click", loadBook)
