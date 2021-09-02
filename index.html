@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- head start -->
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,19 +15,48 @@
     <link rel="stylesheet" href="styles/style.css">
     <script defer src="js/script.js"></script>
 </head>
+<!-- head end  -->
+
+<!-- body start  -->
 
 <body>
+
+    <!-- header start  -->
     <header>
+        <!-- search input  -->
         <div class="w-50 mx-auto input-group row g-1 px-md-5">
             <input id="book-input" type="text" class="form-control rounded col-md-9 col-lg-9"
                 placeholder="Search Your Favourite Book">
             <button class="btn btn-success rounded col-md-3 col-lg-3" type="button" id="book-search">Search</button>
         </div>
     </header>
+    <!-- header end  -->
+
+    <!-- main start  -->
     <main class="container my-5">
-        <h5 id="book-found"></h5>
-        <div id="book-container" class="row row-cols-1 row-cols-lg-2 g-4 g-lg-5"></div>
+        <!-- shows total results found  -->
+        <div id="book-found"></div>
+
+        <!-- shows result  -->
+        <div id="book-container" class="row row-cols-1 row-cols-lg-2 g-3"></div>
+
+        <!-- spinner section start  -->
+        <!-- <h1 id="spinner" class="d-flex justify-content-center">
+            Loading...
+        </h1> -->
     </main>
+    <!-- main end  -->
+
+
+    <div id="spinner" class="text-center">
+        <button class="btn btn-success px-4" type="button" disabled>
+            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            Loading...
+        </button>
+    </div>
+    <!-- spinner section end  -->
+
 </body>
+<!-- body end -->
 
 </html>
